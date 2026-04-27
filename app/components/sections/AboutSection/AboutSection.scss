@@ -1,0 +1,137 @@
+@use "mixins" as *;
+
+.about {
+  @include section-padding;
+  border-top: 1px solid var(--color-border);
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 382px;
+    gap: 80px;
+    align-items: start;
+
+    @include lg-down {
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
+    }
+
+    @include md-down {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  //  Text column
+  &__label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 16px;
+  }
+
+  &__heading {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--color-text);
+    margin-bottom: 24px;
+  }
+
+  &__body {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+
+    strong {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 40px;
+
+    @include xs-down {
+      gap: 24px;
+    }
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__meta-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  &__meta-key {
+    font-size: 13px;
+    color: var(--color-text-faint);
+  }
+
+  //  Stack column
+  &__stack-col {
+    padding: 24px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  &__stack-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    margin-bottom: 20px;
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__stack-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+    animation-delay: var(--delay);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text);
+    }
+  }
+
+  &__stack-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+}

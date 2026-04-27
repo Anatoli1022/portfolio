@@ -1,32 +1,40 @@
 <script setup lang="ts">
-const isMenuOpen = ref(false)
-const isScrolled = ref(false)
+const isMenuOpen = ref(false);
+const isScrolled = ref(false);
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 function handleScroll() {
-  isScrolled.value = window.scrollY > 40
+  isScrolled.value = window.scrollY > 40;
 }
 
 function closeMenu() {
-  isMenuOpen.value = false
+  isMenuOpen.value = false;
 }
 
+watch(isMenuOpen, () => {
+  if (isMenuOpen.value) {
+    document.querySelector("body")?.classList.add("noScroll");
+  } else {
+    document.querySelector("body")?.classList.remove("noScroll");
+  }
+});
+
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-})
+  window.addEventListener("scroll", handleScroll, { passive: true });
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <template>
-  <header class="header" :class="{ 'header--scrolled': isScrolled }">
+  <header class="header" :class="{ header_black: isMenuOpen }">
     <div class="header__container container">
       <a href="#" class="header__logo" aria-label="Home">
         <span class="header__logo-dot" aria-hidden="true" />
@@ -59,7 +67,7 @@ onUnmounted(() => {
         class="header__burger"
         :class="{ 'header__burger--open': isMenuOpen }"
         :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'"
-        aria-expanded="isMenuOpen"
+        :aria-expanded="isMenuOpen"
         type="button"
         @click="isMenuOpen = !isMenuOpen"
       >
