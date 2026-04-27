@@ -99,6 +99,44 @@ export const projects: Project[] = [
     imageAlt: "Cereal editorial magazine layout screenshot",
   },
   {
+    id: "ivax",
+    title: "IVAX — Agency Landing",
+    shortDescription:
+      "Marketing site for a creative agency. Static build on Gatsby with React and SCSS Modules.",
+    description:
+      "Landing for the IVAX agency. Built on Gatsby for static-site speed and good SEO. Each section (header, main, footer) is its own React component, styled with SCSS Modules so styles stay scoped. Set up the file structure and component split early so adding new sections later was straightforward.",
+    type: "pet",
+    stack: ["React", "Gatsby", "SCSS"],
+    liveUrl: "https://ivax.netlify.app/",
+    image: "/img/projects/ivax.jpg",
+    imageAlt: "IVAX agency landing screenshot",
+  },
+  {
+    id: "dubai-realty",
+    title: "Dubai Realty — Real Estate Landing",
+    shortDescription:
+      "Real estate landing for the Dubai market. Gatsby + React + SCSS Modules.",
+    description:
+      "Real estate landing aimed at the Dubai market — apartments, villas and penthouses. Static build on Gatsby for fast load and SEO. Sections built as isolated React components, SCSS Modules for scoped styles. Includes a hero with a city backdrop, a property gallery, a contact form and a FAQ block.",
+    type: "pet",
+    stack: ["React", "Gatsby", "SCSS"],
+    liveUrl: "https://dubai-gatsby.netlify.app/",
+    image: "/img/projects/dubai-realty.jpg",
+    imageAlt: "Dubai Realty landing screenshot",
+  },
+  {
+    id: "astek-website",
+    title: "Astek — Corporate Website",
+    shortDescription:
+      "Corporate site for an outdoor advertising and signage company. WordPress build, redesign, responsive layout and performance work.",
+    description:
+      "Corporate site for Astek (outdoor advertising, signage, branding). Did most of the build on WordPress: redesigned key pages, redid the responsive layout, fixed accumulated bugs and worked on page-load performance. Sections include facts and numbers, a 6-step ordering process, a portfolio gallery of completed jobs, client logos, reviews and contacts.",
+    type: "commercial",
+    stack: ["WordPress", "PHP", "JavaScript", "SCSS", "HTML"],
+    image: "/img/projects/astek-website.jpg",
+    imageAlt: "Astek corporate website screenshot",
+  },
+  {
     id: "ihp-website",
     title: "Island Home Phuket — Real Estate Website",
     shortDescription:
@@ -106,7 +144,7 @@ export const projects: Project[] = [
     description:
       "Took the project over mid-development, finished it and pushed it to production. After launch added a property catalog with filters, a blog, and a Kommo CRM integration through Pabbly so leads from the site go straight into the pipeline.",
     type: "commercial",
-    stack: ["Vue 3", "Nuxt.js", "TypeScript", "SCSS", "Kommo CRM"],
+    stack: ["Webflow", "JavaScript", "Pabbly","Kommo CRM"],
     image: "/img/projects/ihp-website.jpg",
     imageAlt: "Island Home Phuket website screenshot",
   },

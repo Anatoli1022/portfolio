@@ -4,7 +4,10 @@ import type { ProjectType } from "~/types/project";
 
 type FilterValue = "all" | ProjectType;
 
+const PAGE_SIZE = 3;
+
 const sectionRef = ref<HTMLElement | null>(null);
+const countProject = ref<number>(PAGE_SIZE);
 const { observe } = useScrollReveal();
 
 const filters: { label: string; value: FilterValue }[] = [
@@ -21,11 +24,27 @@ const filteredProjects = computed(() =>
     : projects.filter((p) => p.type === activeFilter.value),
 );
 
+const visibleProjects = computed(() =>
+  filteredProjects.value.slice(0, countProject.value),
+);
+
+const remainingCount = computed(() =>
+  Math.max(filteredProjects.value.length - countProject.value, 0),
+);
+
+watch(activeFilter, () => {
+  countProject.value = PAGE_SIZE;
+});
+
 onMounted(() => {
   if (!sectionRef.value) return;
   const revealEls = sectionRef.value.querySelectorAll<HTMLElement>(".reveal");
   observe(revealEls);
 });
+
+function increaseCountProject() {
+  countProject.value += PAGE_SIZE;
+}
 </script>
 
 <template>
@@ -62,13 +81,24 @@ onMounted(() => {
 
       <ul :key="activeFilter" class="projects__grid">
         <li
-          v-for="project in filteredProjects"
+          v-for="project in visibleProjects"
           :key="project.id"
           class="projects__item"
         >
           <ProjectCard :project="project" />
         </li>
       </ul>
+
+      <div v-if="remainingCount > 0" class="projects__more">
+        <button
+          type="button"
+          class="projects__button"
+          @click="increaseCountProject"
+        >
+          <span class="projects__button-label">Show more</span>
+          <span class="projects__button-count">+{{ remainingCount }}</span>
+        </button>
+      </div>
     </div>
   </section>
 </template>
