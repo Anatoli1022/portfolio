@@ -17,7 +17,7 @@ const links = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/анатолий-требко-9a456526b/',
+    href: 'https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9-%D1%82%D1%80%D0%B5%D0%B1%D0%BA%D0%BE-9a456526b/',
     value: 'linkedin.com/in/anatoli',
     external: true,
   },
