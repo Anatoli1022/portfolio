@@ -1,0 +1,143 @@
+// loadPaths in nuxt.config.ts points to app/styles/ — no relative path needed.
+@use "mixins" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: var(--transition-base);
+  border-bottom: 1px solid transparent;
+
+  &--scrolled {
+    background: rgb(10 10 15 / 80%);
+    border-color: var(--color-border);
+    backdrop-filter: blur(12px);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 68px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-right: auto;
+  }
+
+  &__logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+  }
+
+  &__logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: 0.04em;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @include sm-down {
+      display: none;
+      position: fixed;
+      inset: 68px 0 0;
+      background: var(--color-bg);
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+
+      &--open {
+        display: flex;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+
+    &:hover {
+      color: var(--color-text);
+    }
+
+    @include sm-down {
+      font-size: 20px;
+    }
+  }
+
+  &__cta {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-accent);
+      background: var(--color-accent-glow);
+    }
+
+    @include sm-down {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+
+    span {
+      display: block;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: var(--transition-base);
+    }
+
+    &--open {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @include sm-down {
+      display: flex;
+    }
+  }
+}
