@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "nuxt": "^3.16.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.7.3",
+    "@types/node": "^22.13.10",
+    "eslint": "^9.21.0",
+    "eslint-plugin-vue": "^9.33.0",
+    "sass": "^1.86.0",
+    "typescript": "^5.8.2"
+  }
+}

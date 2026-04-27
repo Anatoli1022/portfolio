@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+@mixin lg-down {
+  @media only screen and (max-width: $breakpoint-lg-down) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media only screen and (max-width: $breakpoint-md-down) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media only screen and (max-width: $breakpoint-sm-down) {
+    @content;
+  }
+}
+
+@mixin xs-down {
+  @media only screen and (max-width: $breakpoint-xs-down) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-padding {
+  padding: 120px 0;
+
+  @include md-down {
+    padding: 80px 0;
+  }
+
+  @include sm-down {
+    padding: 60px 0;
+  }
+}
