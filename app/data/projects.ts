@@ -2,6 +2,19 @@ import type { Project } from "~/types/project";
 
 export const projects: Project[] = [
   {
+    id: "slowdive-quiz",
+    title: "Slowdive — Subscription Web Quiz",
+    shortDescription:
+      "Interactive onboarding quiz for a meditation SaaS. Subscription pricing page, billing flows and account management.",
+    description:
+      "Web quiz that drives user activation for the Slowdive meditation app. Multi-step questionnaire collects user preferences, then presents personalised subscription plans. Built and integrated the billing system — payment flows, subscription lifecycle, and transaction status handling. Also worked on the User Account interface and restructured the SCSS architecture for long-term maintainability.",
+    type: "commercial",
+    stack: ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
+    image: "/img/projects/slowdive.jpg",
+    imageAlt: "Slowdive subscription quiz screenshot",
+    noScroll: true,
+  },
+  {
     id: "ihp-analytics",
     title: "Island Home Phuket — Analytics Dashboard",
     shortDescription:
