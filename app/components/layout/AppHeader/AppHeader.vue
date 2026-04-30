@@ -51,6 +51,16 @@ onUnmounted(() => {
         >
           {{ link.label }}
         </a>
+        <a
+          href="/cv-anatoli-trebko.pdf"
+          class="header__cta header__cta--mobile"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          @click="closeMenu"
+        >
+          Download CV
+        </a>
       </nav>
 
       <a

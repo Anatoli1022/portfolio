@@ -97,6 +97,19 @@
     @include sm-down {
       display: none;
     }
+
+    // Shown only inside the mobile nav overlay
+    &--mobile {
+      display: none;
+
+      @include sm-down {
+        display: inline-block;
+        font-size: 20px;
+        padding: 12px 32px;
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+      }
+    }
   }
 
   &__burger {
