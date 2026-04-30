@@ -44,9 +44,10 @@ onMounted(() => {
             transitions that feel right.
           </p>
           <p class="about__body reveal reveal--delay-2">
-            Currently at <strong>Slowdive</strong> (Moscow), building
-            interactive quizzes and account management flows. Open to remote
-            opportunities.
+            Most recently at <strong>Slowdive</strong> (Moscow) — built a
+            billing system, account management interfaces and designed the
+            project's SCSS architecture from scratch.
+            Currently open to new remote opportunities.
           </p>
 
           <div class="about__meta reveal reveal--delay-3">
