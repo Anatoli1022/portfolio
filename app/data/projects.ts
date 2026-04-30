@@ -12,7 +12,6 @@ export const projects: Project[] = [
     stack: ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
     image: "/img/projects/slowdive.jpg",
     imageAlt: "Slowdive subscription quiz screenshot",
-    noScroll: true,
   },
   {
     id: "ihp-analytics",
